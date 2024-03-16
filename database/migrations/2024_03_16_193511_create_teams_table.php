@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('conference', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50)->unique();
-            $table->string('logo')->nullable();
-            $table->integer('superbowl_titles')->default(0);
+            $table->integer('titles');
+            $table->string('logo');
+            $table->foreignId('conference_id')->references('id')->on('conferences');
+            $table->foreignId('division_id')->references('id')->on('divisions');
+            $table->foreignId('city_id')->references('id')->on('cities');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('conference');
+        Schema::dropIfExists('teams');
     }
 };

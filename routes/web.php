@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\divisionsController;
+use App\Http\Controllers\conferencesController;
+use App\Http\Controllers\citiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/conferences', conferencesController::class);
+Route::resource('/divisions', divisionsController::class);
+Route::resource('/teams', TeamController::class);
+Route::resource('/cities', citiesController::class);

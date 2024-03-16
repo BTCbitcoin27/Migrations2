@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\conferences;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\conferences;
 
 class conferencesSeeder extends Seeder
 {
@@ -14,11 +15,15 @@ class conferencesSeeder extends Seeder
     public function run(): void
     {
         $conference = new conferences();
-        $conference->name = 'AFC';
+        $conference->conference_name = 'AFC';
+        $conference->conference_logo = 'afc.png';
+        $conference->superbowl_titles_in_conference = 26;
         $conference->save();
 
         $conference = new conferences();
-        $conference->name = 'NFC';
+        $conference->conference_name = 'NFC';
+        $conference->conference_logo = 'nfc.png';
+        $conference->superbowl_titles_in_conference = 27;
         $conference->save();
     }
 }

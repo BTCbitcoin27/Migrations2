@@ -18,7 +18,7 @@ class citiesFactory extends Factory
     {
         $faker = \Faker\Factory::create();
         return [
-            'name' => $faker->unique()->city(),
+            'city_name' => fake()->city(),
         ];
     }
 }

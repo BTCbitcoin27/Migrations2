@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('divisions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('superbowl_titles')->default(0);
+            $table->string('division_name');
+            $table->string('division_logo');
+            $table->integer('superbowl_titles_in_division')->default(0);
             $table->timestamps();
         });
     }
