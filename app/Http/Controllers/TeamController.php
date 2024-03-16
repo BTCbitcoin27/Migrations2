@@ -12,10 +12,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::all();
-
-        //dd($teams);
-
+        //change city, divisio and conference to the name of the columns in the teams table
+        $teams = Team::with('city', 'division', 'conference')->get();
         return view('teams.index', compact('teams'));
     }
 

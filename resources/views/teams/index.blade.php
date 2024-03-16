@@ -25,9 +25,9 @@
                     <th>Team Name</th>
                     <th>Titles</th>
                     <th>Logo</th>
-                    <th>Conference ID</th>
-                    <th>Division ID</th>
-                    <th>City ID</th>
+                    <th>Conference</th>
+                    <th>Division</th>
+                    <th>City</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -38,9 +38,9 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->titles }}</td>
                         <td>{{ $item->logo }}</td>
-                        <td>{{ $item->conference_id }}</td>
-                        <td>{{ $item->division_id }}</td>
-                        <td>{{ $item->city_id }}</td>
+                        <td>{{ $item->conference -> conference_name }}</td>
+                        <td>{{ $item->division -> division_name }}</td>
+                        <td>{{ $item->city -> city_name }}</td>
                         <td>Botones</td>
                     </tr>
                 @endforeach
